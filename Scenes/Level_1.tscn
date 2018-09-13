@@ -1,0 +1,193 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/World.gd" type="Script" id=1]
+[ext_resource path="res://instance/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/tree.jpg" type="Texture" id=3]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=4]
+[ext_resource path="res://instance/Platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sounds/capt.ogg" type="AudioStream" id=6]
+
+[node name="world" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "collision" ]
+camera_path = NodePath("../Camera2D")
+this_scene = NodePath("res://Scenes/principal_level_1.tscn")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 560, 800 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -399.0
+margin_top = -19.0
+margin_right = 305.0
+margin_bottom = 781.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = ExtResource( 4 )
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
+player_path = NodePath("../Player")
+
+[node name="Score" type="Node2D" parent="Camera2D" index="0"]
+
+[node name="TextEdit" type="TextEdit" parent="Camera2D/Score" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -279.0
+margin_top = -343.0
+margin_right = -175.0
+margin_bottom = -319.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "Score: "
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+_sections_unfolded = [ "Mouse", "Size Flags", "Theme" ]
+
+[node name="Label" type="Label" parent="Camera2D/Score" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -235.0
+margin_top = -342.0
+margin_right = -180.0
+margin_bottom = -325.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Score" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_top = -334.0
+margin_right = 262.0
+margin_bottom = -318.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+percent_visible = true
+
+[node name="Platform" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 1.7962, 104.18 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

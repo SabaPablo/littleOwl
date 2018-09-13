@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/bro1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Sprite.gd" type="Script" id=2]
+
+[node name="bro" type="Sprite"]
+
+position = Vector2( 96.5926, 319.718 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -50 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Offset", "Transform", "Z Index" ]
+res = 0
+multi = -1
+
+
