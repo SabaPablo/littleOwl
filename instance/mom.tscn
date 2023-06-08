@@ -4,14 +4,8 @@
 [ext_resource path="res://Scripts/Sprite.gd" type="Script" id=2]
 
 [node name="mother" type="Sprite"]
-
 position = Vector2( 131.754, 297.825 )
-scale = Vector2( 0.720238, 0.720238 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -50 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Z Index" ]
-res = 0
-multi = 1
-
-

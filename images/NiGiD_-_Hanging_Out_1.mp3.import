@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/NiGiD_-_Hanging_Out_1.mp3-90e96a993a1ccadc9fdc4d423ab4ab62.mp3str"
+
+[deps]
+
+source_file="res://images/NiGiD_-_Hanging_Out_1.mp3"
+dest_files=[ "res://.import/NiGiD_-_Hanging_Out_1.mp3-90e96a993a1ccadc9fdc4d423ab4ab62.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

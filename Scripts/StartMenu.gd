@@ -6,15 +6,11 @@ var width
 var height
 
 
-func _on_StartGameButton_pressed():
-	get_tree().change_scene(level_1)
-
-func _on_QuitGameButton_pressed():
-	get_tree().quit()
 
 func _ready():
 	width = get_viewport().get_visible_rect().size.x
 	height = get_viewport().get_visible_rect().size.y
+	$TextureButton.grab_focus()
 	
 func _on_Timer_timeout():
 	print("time")
@@ -23,3 +19,15 @@ func _on_Timer_timeout():
 	add_child(new_sheet)
 
 
+
+
+func _on_TextureButton_pressed():
+	get_tree().change_scene(level_1)
+
+
+func _on_TextureButton2_pressed():
+	get_tree().change_scene(level_1)
+
+
+func _on_TextureButton3_pressed():
+	get_tree().quit()

@@ -15,6 +15,7 @@ func _ready():
 #	pass
 
 func break():
+	print("break")
 	$Sprite.play("break")
 	get_node("nodeSoundPlayerBreak").play()
 
